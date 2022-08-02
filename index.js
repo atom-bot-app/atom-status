@@ -10,3 +10,7 @@ const client = new Atom({
 client.init();
 
 module.exports = client;
+
+setInterval(() => {
+    if (!client.uptime) client.loadClient(true);
+}, 60000);
